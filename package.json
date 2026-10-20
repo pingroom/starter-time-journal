@@ -1,0 +1,18 @@
+{
+  "name": "pingroom-starter-time-journal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Turn trusted teammates' Start and Stop room actions into a local time journal.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/cli.js listen",
+    "connect": "node src/cli.js connect",
+    "inspect": "node src/cli.js inspect",
+    "export": "node src/cli.js export",
+    "demo": "node src/demo.js",
+    "test": "node --test"
+  },
+  "dependencies": { "@pingroom/sdk": "0.6.0" },
+  "license": "MIT"
+}
