@@ -38,7 +38,9 @@ The demo runs the real pinned SDK through an in-memory HTTP transport. It record
 
 Replace the sample UUID. Slot numbers are 1–16, maximum session length is 1–24 hours, and labels use 1–60 plain letters, digits, spaces, `.`, `_`, or `-`. Keep these settings and the meaning of the room's slots stable while a journal is active.
 
-Pairing saves private credentials in `.pingroom/credentials.json`. Interrupted pairing reuses `.pingroom/pairing.json` and its existing link. If that link has expired, confirm it is no longer usable, remove only the pairing file, and reconnect. An existing saved connection is never overwritten automatically.
+Pairing saves private credentials in `.pingroom/credentials.json`. Interrupted pairing reuses `.pingroom/pairing.json` and its existing link. An existing saved connection is never overwritten automatically.
+
+Before registration, setup saves a private creation intent. A lost registration or pairing response leaves that intent in place; rerunning setup sends no new request. If creation is uncertain or the link expires, inspect Connected Agents and resolve or revoke the old robot before deliberately archiving `.pingroom/pairing.json` for a new setup. Do not discard the record just to obtain another link.
 
 Alternatively, copy `.env.example` to `.env` and supply **both** `PINGROOM_TOKEN` and `PINGROOM_ROOM`. A complete pair overrides saved credentials; partial or blank values fail. Shell variables override `.env`. Configuration, credentials, and state paths are relative to this project regardless of the current shell directory.
 
